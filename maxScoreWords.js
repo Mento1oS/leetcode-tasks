@@ -75,6 +75,27 @@ const maxScoreWords = function (words, letters, score) {
 
   return Math.max(...sumArray);
 
+  // function allArrCombination(arr) {
+  //   const hash = {};
+  //   const res = [];
+  //   arr.sort();
+  //   const len = Math.pow(2, arr.length);
+  //   for (let i = 1; i < len; i++) {
+  //     const lineRes = [];
+  //     for (let innerPos = 0; innerPos < arr.length; innerPos++) {
+  //       const mask = 1 << innerPos;
+  //       if (mask & i) {
+  //         lineRes.push(arr[innerPos]);
+  //       }
+  //     }
+  //     do {
+  //       if (!hash[arr.join("-")]) {
+  //         res.push(lineRes.slice());
+  //       }
+  //     } while (nextPermutation(lineRes));
+  //   }
+  //   return res;
+  // }
   function allArrCombination(arr) {
     const hash = {};
     const res = [];
@@ -97,25 +118,25 @@ const maxScoreWords = function (words, letters, score) {
     return res;
   }
 
-  function nextPermutation(array) {
-    let i = array.length - 1;
-    while (i > 0 && array[i - 1] >= array[i]) i--;
-    if (i <= 0) return false;
-    let j = array.length - 1;
-    while (array[j] <= array[i - 1]) j--;
-    let temp = array[i - 1];
-    array[i - 1] = array[j];
-    array[j] = temp;
-    j = array.length - 1;
-    while (i < j) {
-      temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-      i++;
-      j--;
-    }
-    return true;
-  }
+  // function nextPermutation(array) {
+  //   let i = array.length - 1;
+  //   while (i > 0 && array[i - 1] >= array[i]) i--;
+  //   if (i <= 0) return false;
+  //   let j = array.length - 1;
+  //   while (array[j] <= array[i - 1]) j--;
+  //   let temp = array[i - 1];
+  //   array[i - 1] = array[j];
+  //   array[j] = temp;
+  //   j = array.length - 1;
+  //   while (i < j) {
+  //     temp = array[i];
+  //     array[i] = array[j];
+  //     array[j] = temp;
+  //     i++;
+  //     j--;
+  //   }
+  //   return true;
+  // }
 };
 
 console.log(
