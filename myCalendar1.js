@@ -9,8 +9,7 @@ MyCalendar.prototype.book = function (start, end) {
         if (
             (beg <= start && fin > start) ||
             (beg < end && fin >= end) ||
-            (beg >= start && fin <= end) ||
-            (beg <= start && fin >= end)) {
+            (beg >= start && fin <= end)) {
             return false;
         }
     }
