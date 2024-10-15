@@ -104,15 +104,16 @@ Heap.prototype.removeMinRec = function () {
 }
 
 Heap.prototype.heapifyDownRec = function (index) {
-    if(this.hasLeftChild(index)){
-        let smallerChildIndex = this.getLeftChildIndex(index);
-        if(this.hasRightChild(index) && this.rightChild(index)<this.leftChild(index)){
-            smallerChildIndex = this.getRightChildIndex(index);
-        }
-        if(!this.struct[index]<this.struct[smallerChildIndex]){
-            this.swap(index, smallerChildIndex);
-            this.heapifyDownRec(smallerChildIndex);
-        }
+    let smallest = index;
+    if(this.hasLeftChild(index) && this.struct[smallest]>this.leftChild(index)){
+        smallest = this.getLeftChildIndex(index);
+    }
+    if(this.hasRightChild(index)&&this.struct[smallest]>this.rightChild(index)) {
+        smallest = this.getRightChildIndex(index);
+    }
+    if(smallest!==index){
+        this.swap(index, smallest);
+        this.heapifyDownRec(smallest);
     }
 }
 
@@ -136,7 +137,7 @@ heap.insert(16);
 
 console.log(heap);
 
-heap.removeMin();
+heap.removeMinRec();
 
 console.log(heap);
 
