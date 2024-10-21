@@ -6,6 +6,8 @@ equalXors.js
 allAncestors.js
 testData.js
 sandbox.txt
+parseBoolExpr.js
+splitAStringIntoMaxAmountOfUniqueSubstrings.js
 awards
 ./CodeRun/cosmoHacker.js
 ./CodeRun/nodNok.js
