@@ -77,7 +77,7 @@ const replaceValueInTree = function (root) {
                     collection.add(leftKid);
                 }
                 if (rightKid) {
-                    rightKidVal.val = -siblingSum;
+                    rightKid.val = -siblingSum;
                     collection.add(rightKid);
                 }
             }
@@ -96,7 +96,7 @@ const replaceValueInTree = function (root) {
                     collection.add(leftKid);
                 }
                 if (rightKid) {
-                    rightKidVal.val = -siblingSum;
+                    rightKid.val = -siblingSum;
                     collection.add(rightKid);
                 }
             }
